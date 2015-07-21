@@ -1,10 +1,17 @@
 package com.constgor.eepractice.ch02;
 
-/**
- * Created by user on 7/20/15.
- */
+import org.jboss.weld.environment.se.Weld;
+import org.jboss.weld.environment.se.WeldContainer;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hi!");
+        Weld weld = new Weld();
+        WeldContainer container = weld.initialize();
+
+        BookService bookService = container.instance().select(BookService.class).get();
+        Book book = bookService.createBook("Neuromancer", "cyber punck", 200f);
+
+        System.out.println(book);
+        weld.shutdown();
     }
 }

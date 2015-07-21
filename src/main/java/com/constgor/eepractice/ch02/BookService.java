@@ -1,13 +1,12 @@
 package com.constgor.eepractice.ch02;
 
+import com.constgor.eepractice.ch02.qualifiers.ThirteenDigits;
+
 import javax.inject.Inject;
 
-/**
- * Created by user on 7/20/15.
- */
 public class BookService {
 
-    @Inject
+    @Inject @ThirteenDigits
     private NumberGenerator numberGenerator;
 
     public Book createBook(String name, String description, Float price){
