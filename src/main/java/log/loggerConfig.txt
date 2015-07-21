@@ -1,0 +1,39 @@
+#---------------------------------------------------------------------------
+#-------------------------------- Loggers ----------------------------------
+# уровень протоколирования дефолтного логера (первого уровня)
+.level = SEVERE
+
+# установим уровень протоколирования конкретному логеру
+examples.log.ClassWithOwnLogger_2.level = ALL
+
+#-------------------------------- Handlers ---------------------------------
+# устанавливаем обработчик для всех логеров
+handlers=java.util.logging.FileHandler, java.util.logging.ConsoleHandler
+
+#----------------------------- Handlers settings ---------------------------
+# установим уровень протоколирования конкретного обработчика для всех логеров
+java.util.logging.ConsoleHandler.level = ALL
+
+# файлы лога будут распологаться в %user.home% // около 50кб // не более 2-х
+java.util.logging.FileHandler.level=ALL
+java.util.logging.FileHandler.pattern=javavava_%u_%g.txt
+java.util.logging.FileHandler.limit=50000
+java.util.logging.FileHandler.count=1
+java.util.logging.FileHandler.formatter=java.util.logging.SimpleFormatter
+java.util.logging.SimpleFormatter.format=%4$s: %5$s [%1$tc]%n
+#---------------------------------------------------------------------------
+#Флаги FileHandler'a   
+#   /    The file name separator of the system. Typically either \ or / .
+#   %t   The temp directory of the system.
+#   %h   The user home directory of the system.
+#   %g   The generation number that distinguishes the rotated log files from each other.
+#   %u   A unique number to avoid naming conflicts.
+#   %%   A single percent sign, in case you want to use that in your file name.
+#Форматирование строки
+#   String.format(format, date, source, logger, level, message, thrown);
+#   при составлении строки перечисляются номера аргументов данной функции (с 0)
+#   пример: java.util.logging.SimpleFormatter.format=%4$s: %5$s [%1$tc]%n
+#   результат: лвл сообщение [время]
+
+# Filter -> Logger -> Handler
+# а фильтр задается в коде, т.к. требует определения класса (кода)

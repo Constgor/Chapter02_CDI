@@ -1,0 +1,11 @@
+[Вс янв 25 16:22:40 EET 2015] INFO: ->> Object of: examples.log.ClassWithOwnLogger_2 created!
+[Вс янв 25 16:22:40 EET 2015] FINER: ENTRY Hello! 
+[Вс янв 25 16:22:40 EET 2015] FINER: RETURN 1 
+[Вс янв 25 16:22:40 EET 2015] FINER: ENTRY Hello! 
+[Вс янв 25 16:22:40 EET 2015] FINER: RETURN 2 
+[Вс янв 25 16:22:40 EET 2015] FINER: ENTRY Hello! 
+[Вс янв 25 16:22:40 EET 2015] FINER: RETURN 3 
+[Вс янв 25 16:22:40 EET 2015] FINER: ENTRY Hello! 
+[Вс янв 25 16:22:40 EET 2015] FINER: RETURN 4 
+[Вс янв 25 16:22:40 EET 2015] FINER: ENTRY Hello! 
+[Вс янв 25 16:22:40 EET 2015] FINER: RETURN 5 
